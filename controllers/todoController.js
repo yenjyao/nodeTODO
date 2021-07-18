@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 const express = require("express")
 const mongoose = require("mongoose")
 
-mongoose.connect('mongodb+srv://test:test@todo.fdxtr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
 
 // Create a schema - like a blueprint
 const todoSchema = new mongoose.Schema({
